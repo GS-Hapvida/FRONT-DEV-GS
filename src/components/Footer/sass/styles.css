@@ -1,0 +1,41 @@
+.footer {
+  background-color: black;
+  padding: 20px;
+  color: white;
+}
+.footer .logo-image {
+  width: 220px;
+  height: 170px;
+}
+.footer .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.footer .content .section {
+  margin-bottom: 20px;
+}
+.footer .content .section .text {
+  margin-bottom: 10px;
+}
+.footer .content .section .paragraph {
+  color: #454545;
+}
+.footer .content .section .ul {
+  list-style: none;
+  padding: 0;
+}
+.footer .content .section .ul .li {
+  margin-bottom: 5px;
+  color: #454545;
+  text-decoration: none;
+}
+.footer .content .section .ul .li a {
+  color: #656565;
+  text-decoration: none;
+}
+.footer .copy {
+  text-align: center;
+  margin-top: 20px;
+  color: #454545;
+}/*# sourceMappingURL=styles.css.map */
