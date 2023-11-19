@@ -1,36 +1,29 @@
-import React from 'react'
+import React from "react";
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import  Navbar from 'react-bootstrap/Navbar';
-import Button from '../Button';
-import ImgLogo from '../../assets/dose_certa_azul.png';
+import Button from "../Button";
+import ImgLogo from "../../assets/dose_certa_azul.png";
+import * as S from './styles';
 
-import useAuth from '../../hooks/useAuth';
-import { Link, useNavigate } from 'react-router-dom';
+import useAuth from "../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
-    const { signout } = useAuth();
-    const navigate = useNavigate();
+  const { signout } = useAuth();
+  const navigate = useNavigate();
 
-    return (
-        <Navbar expand='lg' className="bg-body">
-            <Container>
-                <Link to='/home' className="logo">
-                    <img src={ImgLogo} alt="Imagem da logo"/>
-                </Link>
-                <Navbar.Toggle aria-controls='basic-navbar-nav' />
+  return (
+    <S.Nav>
+      <S.StyledLink to="/home" className="logo">
+        <img src={ImgLogo} alt="Imagem da logo" />
+      </S.StyledLink>
 
-                <Navbar.Collapse>
-                    <Nav>
-                        <Button text='sair' onClick={() => [signout(), navigate('/')]}>;
-                            Sair
-                        </Button>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-    );
-}
+      <Button 
+        text="sair" onClick={() => [signout(), navigate("/")]}
+      >
+        Sair
+      </Button>
+    </S.Nav>
+  );
+};
 
-export { NavBar }
+export { NavBar };

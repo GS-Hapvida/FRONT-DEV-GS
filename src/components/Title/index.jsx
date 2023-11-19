@@ -1,5 +1,7 @@
 import * as S from "./styles";
 
-export const Title = ({ title }) => {
+const Title = ({ title }) => {
 	return <S.Title>{title}</S.Title>;
 }
+
+export {Title};

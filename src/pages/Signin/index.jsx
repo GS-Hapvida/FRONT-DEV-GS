@@ -4,9 +4,11 @@ import * as S from './styles';
 
 import Button from '../../components/Button';
 import Input from '../../components/Input'; 
+import ImgLogo from '../../assets/dose_certa_azul.png';
 
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import { Title } from '../../components/Title';
 
 const Signin = () => {
   const navigate = useNavigate();
@@ -35,9 +37,12 @@ const Signin = () => {
 
   return (
     <S.Container>
-      <S.Label>FAÇA O SEU LOGIN </S.Label>
 
       <S.Content>
+      <S.ImageLogo src={ImgLogo} alt='Imagem de Logo'/>
+      <Title 
+        title='Faça seu login'
+      />
         <Input
           type='email'
           placeholder='Digite seu email'

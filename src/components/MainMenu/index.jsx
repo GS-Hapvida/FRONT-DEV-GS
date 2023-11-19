@@ -1,11 +1,11 @@
 import * as S from "./styles";
-import HealthImage from '../../assets/img_main_menu.jpg';
+import ImgDoctor from '../../assets/img_doctor.png';
 
 export const MainMenu = () => {
 	return (
 		<S.Container>
-			<S.Text>CUidando  sempre do seu bem estar</S.Text>
-			<S.Image src={HealthImage} alt="Imagem ilustra duas mãos segurando um coração" />
+			<S.Text>DoseCerta, Cuidando  sempre do seu bem estar</S.Text>
+			<S.Image src={ImgDoctor} alt='Imagem de um doutor'></S.Image>
 		</S.Container>
 	);
 }

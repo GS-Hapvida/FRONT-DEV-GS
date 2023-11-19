@@ -1,4 +1,5 @@
 import React from "react";
+import './sass/styles.scss';
 
 const CardsProductQualities = ({ image, legend, subtitle }) => {
   return (

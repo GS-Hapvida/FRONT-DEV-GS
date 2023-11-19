@@ -4,6 +4,8 @@ import * as S from './styles';
 
 import Button from '../../components/Button';
 import  Input from '../../components/Input';
+import { Title } from '../../components/Title';
+import ImgLogo from '../../assets/dose_certa_azul.png'
 
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
@@ -40,9 +42,11 @@ const Signup = () => {
 
   return (
      <S.Container>
-      <S.Label>Cadastre seu usuário</S.Label>
-
       <S.Content>
+      <S.ImageLogo src={ImgLogo} alt='Imagem de Logo'/>
+      <Title 
+        title='Faça seu login'
+      />
         <Input
           type='email'
           placeholder='Digite seu email'
@@ -80,4 +84,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default Signup;

@@ -1,6 +1,10 @@
 import styled from 'styled-components';
+import ImgBackground from '../../assets/img_signin_background.jpg';
 
 export const Container = styled.div`
+    background-image: url(${ImgBackground});
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,12 +25,20 @@ export const Content = styled.div`
     max-width: 350px;
     padding: 20px;
     border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;;
 `;
 
 export const Label = styled.label`
     font-size: 10px;
     font-weight: 600;
     color: #676767;
+`;
+
+export const ImageLogo = styled.img`
+    width: 50%;
+    height: 50%;
+    margin: 0.1em;
+
 `;
 
 export const LabelSignup = styled.label`

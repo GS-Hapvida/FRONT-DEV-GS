@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { COLORS } from '../../styles/theme';
 
 export const Title = styled.h2`
 	display: flex;
-	font-size: 2.2em;
+	font-size: 2em;
 	text-align: center;
 	align-items: center;
 	justify-content: center;
-	color: black;
-	margin: 60px;
+	color: ${ (props) => props.color || COLORS.blueSecundary };
+	margin: ${(props) => props.margin || '10px'};
 `;

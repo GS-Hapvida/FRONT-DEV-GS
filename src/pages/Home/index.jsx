@@ -7,6 +7,7 @@ import CardsProductQualities from '../../components/CardsProductQualities';
 import { Footer } from '../../components/Footer';
 import { MainMenu } from '../../components/MainMenu';
 import qualitiesItems from '../../utils/qualitiesItems';
+import MedicinesComp from '../../components/MedicinesComp';
 
 const Home = () => {
   return (
@@ -15,11 +16,11 @@ const Home = () => {
             <NavBar />
             <MainMenu/>
             
-            <S.ContainerCards>
-              <Title
+            <Title
                 title="Nossas maiores qualidades"
               />
 
+            <S.ContainerCards>
               {qualitiesItems.map((Card) => (
                 <CardsProductQualities
                     key={Card.id}
@@ -30,11 +31,11 @@ const Home = () => {
               ))}
             </S.ContainerCards>
 
-            <S.ContainerCRUD>
-              <Title
+            <Title
                 title="Registre seu medicamento"
               />
-
+            <S.ContainerCRUD>
+             <MedicinesComp/>
             </S.ContainerCRUD>
 
             <Footer />
