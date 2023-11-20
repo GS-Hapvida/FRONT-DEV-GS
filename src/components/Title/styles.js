@@ -7,6 +7,7 @@ export const Title = styled.h2`
 	text-align: center;
 	align-items: center;
 	justify-content: center;
-	color: ${ (props) => props.color || COLORS.blueSecundary };
+	font-weight: 600;
+	color: ${(props) => props.color ||COLORS.blueSecundary };
 	margin: ${(props) => props.margin || '10px'};
 `;

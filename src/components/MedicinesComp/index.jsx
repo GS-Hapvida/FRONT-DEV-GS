@@ -35,12 +35,12 @@ const MedicinesComp = () => {
         setData(db_costumer);
     }, [setData]);
 
-    const handleRemove = (medicamento) => {
-        const newArray = data.filter((item) => item.medicamento !== medicamento);
+    const handleRemove = (description) => {
+        const newArray = data.filter((item) => item.description !== description);
 
         setData(newArray);
 
-        localStorage.setItem('cad_medicamentos', JSON.stringify(newArray));
+        localStorage.setItem('cad_medicines', JSON.stringify(newArray));
     };
 
 
@@ -63,32 +63,32 @@ const MedicinesComp = () => {
                     <Thead>
                         <Tr>
                             <Th maxW={isMobile ? 5 : 100} fontSize='20px'> 
-                                Nome
+                               Medicamento
                             </Th>
                             <Th maxW={isMobile ? 5 : 100} fontSize='20px'> 
-                                Medicamento
+                                Descrição
                             </Th>
                             <Th p={0}></Th>
                             <Th p={0}></Th>
                         </Tr>
                     </Thead>
                     <Tbody>
-                        {data.map(({name, medicamento}, index) =>(
+                        {data.map(({medicine, description}, index) =>(
                             <Tr key={index} cursor='pointer' _hover={{ bg: 'gray.100'}}>
-                                <Td maxW ={isMobile ? 5:  100}>{name}</Td>
-                                <Td maxW ={isMobile ? 5:  100}>{medicamento}</Td>
+                                <Td maxW ={isMobile ? 5:  100}>{medicine}</Td>
+                                <Td maxW ={isMobile ? 5:  100}>{description}</Td>
                                 <Td p={0}>
                                     <EditIcon 
                                         fontSize={20}
                                         onClick={ () => [
-                                            setDataEdit({name, medicamento, index}),
+                                            setDataEdit({medicine, description, index}),
                                         ]}
                                     />
                                 </Td>
                                 <Td p={0}>
                                     <DeleteIcon
                                         fontSize={20}
-                                        onClick={ () => handleRemove(medicamento)}
+                                        onClick={ () => handleRemove(description)}
                                     />
                                 </Td>
                             </Tr>

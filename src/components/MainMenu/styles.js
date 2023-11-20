@@ -3,7 +3,7 @@ import { COLORS } from "../../styles/theme";
 
 export const Container = styled.div`
 	padding: 40px;
-	background-color: ${ COLORS.backgroundColor };
+	background-color: ${ COLORS.blueSecundary };
 	height: 90vh;
 	width: 100vw;
 	display: flex;

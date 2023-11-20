@@ -1,21 +1,21 @@
 const qualitiesItems = [
     {
         id: 1,
-        image: require("../assets/img_main_menu.jpg"),
+        image: require("../assets/img_card_segurance.jpg"),
         legend: '',
-        subtitle: 'Acessível'
+        subtitle: 'Segurança'
     },
     {
         id: 2,
-        image: require("../assets/img_main_menu.jpg"),
+        image: require("../assets/img_card_efficiency.jpg"),
         legend: '',
-        subtitle: 'Seguro'
+        subtitle: 'Eficiência'
     },
     {
         id: 3,
-        image: require("../assets/img_main_menu.jpg"),
+        image: require("../assets/img_card_accessibility.jpg"),
         legend: '',
-        subtitle: 'Fácil de usar'
+        subtitle: 'Acessível'
     },
 ]
 

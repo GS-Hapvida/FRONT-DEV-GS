@@ -16,38 +16,38 @@ import {
 } from '@chakra-ui/react';
 
 const ModalComp = ({ data, setData, dataEdit, isOpen, onClose }) => {
-    const [ name, setName ] = useState(dataEdit.name || '');
-    const [ email, setEmail ] = useState(dataEdit.email || '');
+    const [ medicine, setMedicine ] = useState(dataEdit.medicine || '');
+    const [ description, setDescription ] = useState(dataEdit.description || '');
 
     const handleSave = () => {
-        if (!name || !email) return;
+        if (!medicine || !description) return;
 
-        if (emailAlreadyExists()) {
-            return alert("E-mail já cadastrado!");
-        }
+        // if (descriptionAlreadyExists()) {
+        //     return alert("E-mail já cadastrado!");
+        // }
 
         if (Object.keys(dataEdit).length) {
-            data[dataEdit.index] = {name, email};
+            data[dataEdit.index] = {medicine, description};
         }
 
         const newDataArray = !Object.keys(dataEdit).length
-            ? [...(data ? data : []), { name, email }]
+            ? [...(data ? data : []), { medicine, description }]
             : [...(data ? data : [])];
 
-        localStorage.setItem('cad_medicamentos', JSON.stringify(newDataArray));
+        localStorage.setItem('cad_medicines', JSON.stringify(newDataArray));
 
         setData(newDataArray);
 
         onClose();
     };
 
-    const emailAlreadyExists = () => {
-        if (dataEdit.email !== email && data?.length){
-            return data.find((item) => item.email === email);
-        }
+    // const descriptionAlreadyExists = () => {
+    //     if (dataEdit.description !== description && data?.length){
+    //         return data.find((item) => item.description === description);
+    //     }
 
-        return false;
-    };
+    //     return false;
+    // };
 
     return(
        <>
@@ -59,21 +59,21 @@ const ModalComp = ({ data, setData, dataEdit, isOpen, onClose }) => {
                 <ModalBody>
                     <FormControl display='flex' flexDir='column' gap={4}>
                         <Box>
-                            <FormLabel>Nome</FormLabel>
-                            <Input
-                                type='text'
-                                placeholder='Nome'
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                            />
-                        </Box>
-                        <Box>
                             <FormLabel>Medicamento</FormLabel>
                             <Input
                                 type='text'
-                                placeholder='email'
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder='Nome do medicamento'
+                                value={medicine}
+                                onChange={(e) => setMedicine(e.target.value)}
+                            />
+                        </Box>
+                        <Box>
+                            <FormLabel>Descrição</FormLabel>
+                            <Input
+                                type='text'
+                                placeholder='Ex: 10ml / 5 em 5 horas'
+                                value={description}
+                                onChange={(e) => setDescription(e.target.value)}
                             />
                         </Box>
                     </FormControl>

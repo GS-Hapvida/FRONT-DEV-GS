@@ -4,11 +4,10 @@ $card-height: 25rem;
 $card-margin: 15px;
 $card-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 
-$legend-box-hover-color: #55e5f6;
+$legend-box-hover-color: #454545;
 $legend-box-default-color: #4b4b4b;
-$legend-box-clicked-color: #0555e5;
 
-$subtitle-text-color: #8e8e8e;
+$subtitle-text-color: white;
 $subtitle-font-size: 1.6em;
 
 .StyledCard {
@@ -35,10 +34,6 @@ $subtitle-font-size: 1.6em;
 
   &:hover {
     background-color: $legend-box-hover-color;
-  }
-
-  &.isClicked {
-    background-color: $legend-box-clicked-color;
   }
 }
 

@@ -9,17 +9,18 @@ const Footer = () => {
           <img src={ImgLogo} alt="Logo" className="logo-image" />
         </div>
         <div className="section">
-          <h3 className="text">Projeto</h3>
+          <h3 className="text">Projeto DoseCerta</h3>
+          <p className="paragraph">DoseCerta, cuidando sempre de você!</p>
         </div>
         <div className="section">
           <h3 className="text">Contato</h3>
-          <p className="paragraph">Email: exemplo@inclui+.com</p>
+          <p className="paragraph">Email: exemplo@DoseCerta.com</p>
           <p className="paragraph">Telefone: (99) 9999-9999</p>
         </div>
       </div>
       <div className="copy">
         <p className="paragraph">
-          Todos os direitos reservados a Inclui+ &copy; - 2023
+          Todos os direitos reservados a DoseCerta &copy; - 2023
         </p>
       </div>
     </div>
