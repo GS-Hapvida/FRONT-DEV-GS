@@ -6,8 +6,8 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser ] = useState();
 
     useEffect(() => {
-        const userToken = localStorage.getItem('user_token');
-        const userStorage = localStorage.getItem('users_db');
+        const userToken = sessionStorage.getItem('user_token');
+        const userStorage = sessionStorage.getItem('users_db');
 
         if ( userToken && userStorage) {
             const hasUser = JSON.parse(userStorage)?.filter(
@@ -18,16 +18,16 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    const signin = (email, password) =>{
-        const usersStorage = JSON.parse(localStorage.getItem('users_db'));
+    const signin = (name, email, password) =>{
+        const usersStorage = JSON.parse(sessionStorage.getItem('users_db'));
 
         const hasUser = usersStorage?.filter((user) => user.email === email);
 
         if ( hasUser?.length) {
-            if (hasUser[0].email === email && hasUser[0].password === password) {
+            if (hasUser[0].name === name && hasUser[0].email === email && hasUser[0].password === password) {
                 const token = Math.random().toString(36).substring(2);
-                localStorage.setItem('user_token', JSON.stringify({ email, token}))
-                setUser ({ email, password })
+                sessionStorage.setItem('user_token', JSON.stringify({ email, token}))
+                setUser ({name, email, password})
                 return;
             } else {
                 return "E-mail ou senha incorretos!";
@@ -37,8 +37,8 @@ export const AuthProvider = ({ children }) => {
         }
     }
 
-    const signup = (email, password, name) => {
-        const usersStorage = JSON.parse(localStorage.getItem('users_db'));
+    const signup = (name, email, password) => {
+        const usersStorage = JSON.parse(sessionStorage.getItem('users_db'));
 
         const hasUser =  usersStorage?.filter((user) => user.email === email);
 
@@ -49,19 +49,19 @@ export const AuthProvider = ({ children }) => {
         let newUser;
 
         if( usersStorage ) {
-            newUser = [ ...usersStorage, {email, password, name}];
+            newUser = [ ...usersStorage, {name, email, password}];
         } else {
-            newUser = [{ email, password, name }];
+            newUser = [{ name, email, password }];
         }
 
-        localStorage.setItem('users_db', JSON.stringify(newUser));
+        sessionStorage.setItem('users_db', JSON.stringify(newUser));
 
         return;
     };
 
     const signout = () => {
         setUser(null);
-        localStorage.removeItem('user_token');
+        sessionStorage.removeItem('user_token');
     }
 
     return (

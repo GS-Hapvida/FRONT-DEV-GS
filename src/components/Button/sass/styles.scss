@@ -9,11 +9,12 @@ $color-white: #fff ;
     margin: 10px 0;
     font-size: 1.3em;
     cursor: pointer;
-    background: $background-color;
+    background: $background-color-blue;
     border: 2px solid $color-white;
     border-radius: 5px;
     width: 250px;
     height: 50px;
+
     &:hover {
         background: $background-color;
         color: $color-white;

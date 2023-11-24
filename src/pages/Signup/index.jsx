@@ -29,7 +29,7 @@ const Signup = () => {
       return;  
     }
 
-    const res = signup(email,password);
+    const res = signup(name, email,password);
 
     if (res) {
       setError(res);

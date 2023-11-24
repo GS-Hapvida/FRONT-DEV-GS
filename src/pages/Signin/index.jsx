@@ -14,18 +14,19 @@ const Signin = () => {
   const navigate = useNavigate();
   const { signin } = useAuth();
 
+  const [name, setName ] = useState('');
   const [email, setEmail ] = useState('');
   const [password, setPassword ] = useState('');
   const [error, setError ] = useState('');
 
 
   const handleLogin =  () => {
-    if (!email | !password){
+    if (!name | !email | !password){
       setError("Preencha todos os campos");
       return;
     }
 
-    const res = signin(email, password);
+    const res = signin(name, email, password);
 
     if(res) {
       setError(res);
@@ -43,6 +44,13 @@ const Signin = () => {
       <Title 
         title='Faça seu login'
       />
+        <Input
+          type='text'
+          placeholder='Digite seu usuário'
+          value={name}
+          onChange={(e) => [setName(e.target.value), setError("")]}
+        />
+
         <Input
           type='email'
           placeholder='Digite seu email'

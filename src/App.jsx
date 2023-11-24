@@ -1,7 +1,7 @@
 
 import React from 'react';
 import RoutesApp from './routes';
-import { AuthProvider } from './mocks/auth';
+import { AuthProvider } from './services/auth';
 
 
 function App() {

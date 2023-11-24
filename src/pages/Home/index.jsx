@@ -6,8 +6,8 @@ import { Footer } from '../../components/Footer';
 import { MainMenu } from '../../components/MainMenu';
 
 import CardsProductQualities from '../../components/CardsProductQualities';
-import qualitiesItems from '../../mocks/qualitiesItems';
 import MedicinesComp from '../../components/MedicinesComp';
+import qualitiesItems from '../../mocks/qualitiesItems';
 
 const Home = () => {
   return (
@@ -40,12 +40,12 @@ const Home = () => {
             <S.ContainerCards>
               <S.Title style={{color:'#fff'}}>Nossas qualidades!</S.Title>
               <div>
-                {qualitiesItems.map((Card) => (
+                {qualitiesItems.map((card) => (
                   <CardsProductQualities
-                    key={Card.id}
-                    image={Card.image}
-                    legend={Card.legend}
-                    subtitle={Card.subtitle}
+                    key={card.id}
+                    image={card.image}
+                    legend={card.legend}
+                    subtitle={card.subtitle}
                   />
                 ))}
               </div>
