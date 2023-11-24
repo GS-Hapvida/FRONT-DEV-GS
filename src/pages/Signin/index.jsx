@@ -5,27 +5,27 @@ import * as S from './styles';
 import Button from '../../components/Button';
 import Input from '../../components/Input'; 
 import ImgLogo from '../../assets/dose_certa_azul.png';
+import { Title } from '../../components/Title';
 
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import { Title } from '../../components/Title';
 
 const Signin = () => {
   const navigate = useNavigate();
   const { signin } = useAuth();
 
   const [email, setEmail ] = useState('');
-  const [senha, setSenha ] = useState('');
+  const [password, setPassword ] = useState('');
   const [error, setError ] = useState('');
 
 
   const handleLogin =  () => {
-    if (!email | !senha){
+    if (!email | !password){
       setError("Preencha todos os campos");
       return;
     }
 
-    const res = signin(email, senha);
+    const res = signin(email, password);
 
     if(res) {
       setError(res);
@@ -53,8 +53,8 @@ const Signin = () => {
         <Input
           type='password'
           placeholder='Digite sua senha'
-          value={senha}
-          onChange={(e) => [setSenha(e.target.value), setError("")]}
+          value={password}
+          onChange={(e) => [setPassword(e.target.value), setError("")]}
         />
 
         <S.LabelError>{error}</S.LabelError>

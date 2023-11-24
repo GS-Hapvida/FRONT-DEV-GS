@@ -15,20 +15,17 @@
   display: flex;
   background-color: #4b4b4b;
   height: 30%;
-  width: auto;
+  width: 100%;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 .LegendBox:hover {
-  background-color: #55e5f6;
-}
-.LegendBox.isClicked {
-  background-color: #0555e5;
+  background-color: #454545;
 }
 
 .Subtitle {
-  color: #8e8e8e;
+  color: white;
   font-size: 1.6em;
   text-decoration: none;
   cursor: pointer;

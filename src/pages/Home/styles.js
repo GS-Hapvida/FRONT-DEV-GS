@@ -4,6 +4,15 @@ import { COLORS } from '../../styles/theme';
 export const Container = styled.div`
     margin: 0;
 `;
+
+export const Title = styled.h2`
+	font-size: 2em;
+	text-align: center;
+	align-items: center;
+	font-weight: 600;
+	margin: 30px;
+`;
+
 export const ContainerCards = styled.div`
     background-color: ${ COLORS.blueSecundary };
     gap: 12px;

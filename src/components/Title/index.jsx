@@ -1,7 +1,7 @@
-import * as S from "./styles";
+import './sass/styles.scss';
 
 const Title = ({ title }) => {
-	return <S.Title>{title}</S.Title>;
+	return <h2 className="title">{title}</h2>;
 }
 
 export {Title};

@@ -1,0 +1,31 @@
+.container {
+  padding: 40px;
+  background-color: #3F72AF;
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+@media (max-width: 789px) {
+  .container {
+    grid: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.container .text {
+  grid: 1;
+  font-weight: 400;
+  font-size: 3.8rem;
+  line-height: 75px;
+  text-align: center;
+  color: #ffffff;
+}
+.container .img {
+  grid: 2;
+  margin: 20px;
+  width: 100%;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,21 @@
+$background-color: #112D4E;
+$background-color-blue:#3F72AF ;
+$color-text: #F9F7F7;
+$color-white: #fff ;
+
+.button {
+    color: $color-text;
+    padding: 7px 15px;
+    margin: 10px 0;
+    font-size: 1.3em;
+    cursor: pointer;
+    background: $background-color;
+    border: 2px solid $color-white;
+    border-radius: 5px;
+    width: 250px;
+    height: 50px;
+    &:hover {
+        background: $background-color;
+        color: $color-white;
+  }
+}

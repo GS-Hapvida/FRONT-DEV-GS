@@ -4,13 +4,21 @@
   color: white;
 }
 .footer .logo-image {
-  width: 200px;
-  height: 150px;
+  width: 10em;
+  height: 80%;
 }
 .footer .content {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 12px;
+}
+@media (max-width: 560px) {
+  .footer .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 .footer .content .section {
   margin-bottom: 20px;
@@ -20,19 +28,6 @@
 }
 .footer .content .section .paragraph {
   color: #454545;
-}
-.footer .content .section .ul {
-  list-style: none;
-  padding: 0;
-}
-.footer .content .section .ul .li {
-  margin-bottom: 5px;
-  color: #454545;
-  text-decoration: none;
-}
-.footer .content .section .ul .li a {
-  color: #656565;
-  text-decoration: none;
 }
 .footer .copy {
   text-align: center;

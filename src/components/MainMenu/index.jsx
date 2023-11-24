@@ -1,11 +1,11 @@
-import * as S from "./styles";
 import ImgDoctor from '../../assets/img_doctor.png';
+import './sass/styles.scss';
 
 export const MainMenu = () => {
 	return (
-		<S.Container>
-			<S.Text>DoseCerta, Cuidando  sempre do seu bem estar</S.Text>
-			<S.Image src={ImgDoctor} alt='Imagem de um doutor'></S.Image>
-		</S.Container>
+		<div className='container'>
+			<p className='text'>DoseCerta, cuidando sempre de você!</p>
+			<img className="img" src={ImgDoctor} alt='Imagem de um doutor'></img >
+		</div>
 	);
-}
+};

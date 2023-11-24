@@ -1,0 +1,10 @@
+.title {
+  display: flex;
+  font-size: 2em;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #3F72AF;
+  margin: "10px";
+}/*# sourceMappingURL=styles.css.map */

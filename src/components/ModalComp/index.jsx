@@ -22,10 +22,6 @@ const ModalComp = ({ data, setData, dataEdit, isOpen, onClose }) => {
     const handleSave = () => {
         if (!medicine || !description) return;
 
-        // if (descriptionAlreadyExists()) {
-        //     return alert("E-mail já cadastrado!");
-        // }
-
         if (Object.keys(dataEdit).length) {
             data[dataEdit.index] = {medicine, description};
         }
@@ -40,14 +36,6 @@ const ModalComp = ({ data, setData, dataEdit, isOpen, onClose }) => {
 
         onClose();
     };
-
-    // const descriptionAlreadyExists = () => {
-    //     if (dataEdit.description !== description && data?.length){
-    //         return data.find((item) => item.description === description);
-    //     }
-
-    //     return false;
-    // };
 
     return(
        <>

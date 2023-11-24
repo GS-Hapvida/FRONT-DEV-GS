@@ -14,21 +14,22 @@ const Signup = () => {
   const navigate = useNavigate();
   const { signup } = useAuth();
 
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [emailConf, setEmailConf] = useState('');
-  const [senha, setSenha] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordConfir, setPasswordConfir] = useState('');
   const [error, setError] = useState('');
 
   const handleSignup = () =>{
-    if(!email | !emailConf | !senha){
+    if( !name | !email | !passwordConfir | !password){
       setError("Preencha todos os campos");
       return;
-    } else if (email !== emailConf) {
-      setError("Os e-mails não são iguais");
+    } else if (password !== passwordConfir) {
+      setError("As senhas não são iguais");
       return;  
     }
 
-    const res = signup(email,senha);
+    const res = signup(email,password);
 
     if (res) {
       setError(res);
@@ -45,8 +46,15 @@ const Signup = () => {
       <S.Content>
       <S.ImageLogo src={ImgLogo} alt='Imagem de Logo'/>
       <Title 
-        title='Faça seu login'
+        title='Cadastre o seu usuário'
       />
+        <Input
+          type='text'
+          placeholder='Digite seu usuário'
+          value={name}
+          onChange={(e) => [setName(e.target.value), setError("")]}
+        />
+
         <Input
           type='email'
           placeholder='Digite seu email'
@@ -55,21 +63,21 @@ const Signup = () => {
         />
 
         <Input
-          type='email'
-          placeholder='Confirme seu email'
-          value={emailConf}
-          onChange={(e) => [setEmailConf(e.target.value), setError("")]}
+          type='password'
+          placeholder='Digite sua senha'
+          value={password}
+          onChange={(e) => [setPassword(e.target.value), setError("")]}
         />
 
         <Input
           type='password'
-          placeholder='Digite sua senha'
-          value={senha}
-          onChange={(e) => [setSenha(e.target.value), setError("")]}
+          placeholder='Confirme seu senha'
+          value={passwordConfir}
+          onChange={(e) => [setPasswordConfir(e.target.value), setError("")]}
         />
 
         <S.LabelError>{error}</S.LabelError>
-        <Button text="Entrar" onClick={handleSignup} />
+        <Button text="Cadastrar" onClick={handleSignup} />
 
         <S.LabelSignup>
           Já tem um conta?

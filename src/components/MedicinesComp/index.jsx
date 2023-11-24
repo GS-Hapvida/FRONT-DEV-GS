@@ -53,19 +53,19 @@ const MedicinesComp = () => {
          fontSize='20px'
          fontFamily='poppins'
         >
-        <Box maxW={800} w='100%' h='100vh' py={10} px={10} >
-            <Button colorScheme='blue' onClick={() => [setDataEdit({}), onOpen()]}>
-                Novo Cadastro
+        <Box maxW='100%' w='100%' h='100vh' py={ isMobile ? '0px' : '10px'} px={ isMobile ? '0px' : '20px' } >
+            <Button colorScheme='blue' ml={5} onClick={() => [setDataEdit({}), onOpen()]}>
+                Novo registro
             </Button>
         
             <Box overflowY='auto' height='100%'>
                 <Table mt='6'>
                     <Thead>
                         <Tr>
-                            <Th maxW={isMobile ? 5 : 100} fontSize='20px'> 
-                               Medicamento
+                            <Th maxW={isMobile ? 5 : 100} fontSize={ isMobile ? '15px' : '20px'}> 
+                               Nome
                             </Th>
-                            <Th maxW={isMobile ? 5 : 100} fontSize='20px'> 
+                            <Th maxW={isMobile ? 5 : 100} fontSize={ isMobile ? '15px' : '20px'}> 
                                 Descrição
                             </Th>
                             <Th p={0}></Th>
@@ -80,9 +80,7 @@ const MedicinesComp = () => {
                                 <Td p={0}>
                                     <EditIcon 
                                         fontSize={20}
-                                        onClick={ () => [
-                                            setDataEdit({medicine, description, index}),
-                                        ]}
+                                        onClick={ () => setDataEdit(medicine, description, index)}
                                     />
                                 </Td>
                                 <Td p={0}>

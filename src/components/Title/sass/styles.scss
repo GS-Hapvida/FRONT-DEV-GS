@@ -1,0 +1,14 @@
+$font-size: 2em;
+$font-weight: 600;
+$color: #3F72AF;
+
+.title {
+    display: flex;
+	font-size: $font-size;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	font-weight: $font-weight;
+	color: $color;
+	margin: '10px';
+}

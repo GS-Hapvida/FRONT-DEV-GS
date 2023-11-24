@@ -1,0 +1,35 @@
+$background-color: #3F72AF;
+
+.container {
+    padding: 40px;
+	background-color: $background-color;
+	height: 90vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+
+	@media(max-width: 789px) {
+		grid: none;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+    .text{
+        grid: 1;
+        font-weight: 400;
+        font-size: 3.8rem;
+        line-height: 75px;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .img{
+        grid: 2;
+        margin: 20px;
+        width: 100%;
+    }
+
+}

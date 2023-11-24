@@ -1,14 +1,12 @@
 import React from 'react'
 import * as S from './styles';
 
-import { Title } from '../../components/Title';
 import { NavBar } from '../../components/Navbar';
 import { Footer } from '../../components/Footer';
 import { MainMenu } from '../../components/MainMenu';
-import { COLORS } from '../../styles/theme';
 
 import CardsProductQualities from '../../components/CardsProductQualities';
-import qualitiesItems from '../../utils/qualitiesItems';
+import qualitiesItems from '../../mocks/qualitiesItems';
 import MedicinesComp from '../../components/MedicinesComp';
 
 const Home = () => {
@@ -19,9 +17,7 @@ const Home = () => {
             <MainMenu/>
             
             <S.Content>
-              <Title 
-                title='O que é a DoseCerta?'
-              />
+              <S.Title style={{color: '#3F72AF'}}>O que é a DoseCerta?</S.Title>
               <div>
                 <p>
                   A solução DoseCerta armazena e organiza medicamentos para pacientes, evitando erros de dosagem, melhorando a
@@ -31,9 +27,7 @@ const Home = () => {
             </S.Content>
 
             <S.Content>
-              <Title 
-                  title='O que ela fará?'
-                />
+              <S.Title style={{color: '#3F72AF'}}>O que ela fará?</S.Title>
                 <div>
                   <p>
                   A solução DoseCerta ajuda pacientes a armazenar, acompanhar e tomar seus medicamentos corretamente,
@@ -44,44 +38,33 @@ const Home = () => {
 
            
             <S.ContainerCards>
-              <Title
-                color = { COLORS.white }
-                margin='40px'
-                title="Nossas maiores qualidades"
-              />
+              <S.Title style={{color:'#fff'}}>Nossas qualidades!</S.Title>
               <div>
                 {qualitiesItems.map((Card) => (
                   <CardsProductQualities
                     key={Card.id}
                     image={Card.image}
                     legend={Card.legend}
-                    substitle={Card.subtitle}
+                    subtitle={Card.subtitle}
                   />
                 ))}
               </div>
             </S.ContainerCards>
 
             <S.Content>
-              <Title 
-                  title='Como funcionará?'
-                />
+              <S.Title style={{color:'#3F72AF'}}>Como funciona</S.Title>
                 <div>
                   <p>
-                    A solução DoseCerta permite que pacientes armazenem suas receitas e medicamentos de forma segura e organizada. A plataforma também fornece lembretes para ajudar os pacientes a tomar seus medicamentos na hora certa.
-                  </p>
+                  A DoseCerta permite que você crie um inventário de todos os seus medicamentos, incluindo o nome e descrição do medicamento, que pode incluir informações como o motivo do uso, os efeitos colaterais possíveis e as interações medicamentosas.                  </p>
                 </div> 
             </S.Content>
 
-            <Title
-                title="Registre seu medicamento"
-              />
+            <S.Title style={{color: '#3F72AF'}}>Registre seu medicamento</S.Title>
             <S.ContainerCRUD>
              <MedicinesComp/>
             </S.ContainerCRUD>
 
             <Footer />
-
-
 
         </S.Container>
     </>

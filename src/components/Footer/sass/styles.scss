@@ -10,14 +10,21 @@ $link-color: #656565;
   color: $text-color;
 
   .logo-image {
-    width: 50%;
+    width: 10em;
     height: 80%;
   }
 
   .content {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 12px;
+
+    @media (max-width: 560px){
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
 
     .section {
       margin-bottom: 20px;
@@ -28,22 +35,6 @@ $link-color: #656565;
 
       .paragraph {
         color: $font-color-text;
-      }
-
-      .ul {
-        list-style: none;
-        padding: 0;
-
-        .li {
-          margin-bottom: 5px;
-          color: $font-color-text;
-          text-decoration: none;
-
-          a {
-            color: $link-color;
-            text-decoration: none;
-          }
-        }
       }
     }
   }

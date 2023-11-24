@@ -10,6 +10,22 @@ export const Nav = styled.div`
     justify-content: space-around;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+    @media (max-width: 600px){
+        flex-direction: column;
+        height: auto;
+        gap: 12px;
+    }
+`;
+
+export const UserInfo = styled.div`
+    p{
+        font-size: 1.2em;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        color: #454545;
+        margin: 0 20px;
+    }
 `;
 
 export const StyledLink = styled(Link)`
